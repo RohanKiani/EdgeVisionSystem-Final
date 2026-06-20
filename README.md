@@ -1,84 +1,72 @@
+
 Real-Time Edge Vision System
 YOLOv8-Based Object Detection on Live Camera Feeds
-1. Project Context
+🔹 Overview
 
-Modern edge systems require real-time perception under constrained compute environments. This project demonstrates a lightweight but fully functional computer vision pipeline capable of performing real-time object detection on live camera input using a CPU-optimized deep learning model.
+This project implements a real-time computer vision system for object detection on live camera feeds using a lightweight YOLOv8 model optimized for CPU-based edge execution.
 
-The system simulates an edge deployment scenario where inference, visualization, and logging are performed locally without relying on cloud processing.
+The system is designed with a modular streaming architecture that processes frames in real time, performs inference, and outputs both visual and structured detection results.
 
-2. Problem Statement
+🔹 Core Objectives
 
-The objective is to design and implement an end-to-end vision system that:
+The system is designed to:
 
-Continuously processes live camera input
-Performs real-time object detection and classification
-Outputs both visual and structured representations of detected objects
-Maintains real-time performance suitable for edge environments
+Ingest continuous live camera feed
+Perform real-time object detection and classification
+Display bounding boxes, labels, and confidence scores
+Generate structured detection logs in real time
+Maintain performance suitable for edge devices
+🔹 System Architecture
 
-The system must remain efficient, modular, and deployable on resource-constrained hardware such as Raspberry Pi or equivalent systems.
+The system follows a modular streaming pipeline:
 
-3. System Architecture
+Camera Input → Frame Capture → YOLOv8 Inference → Post-Processing → Visualization → Logging
 
-The system follows a modular perception pipeline:
-
-Camera Input → Frame Acquisition → YOLOv8 Inference → Post-Processing → Visualization + Logging
-
-Each module is decoupled to ensure:
-
-Maintainability
-Scalability
-Easy hardware portability (PC → Edge device transition)
-4. Hardware Assumption
-
-While development was performed on a laptop, the system is explicitly designed for edge compatibility.
-
-Deployment Target:
-Raspberry Pi / Single Board Computer
-CPU-only inference environment
+Key Design Properties:
+Fully modular architecture
+Real-time frame-based processing
+CPU-optimized inference pipeline
+Edge-device deployment compatibility
+🔹 Hardware Assumption
+Deployment Targets:
+Raspberry Pi / Single Board Computers
+CPU-only inference systems
+Laptop-based simulation environment (used for development)
 Justification:
 
-A laptop was used for rapid prototyping. However, YOLOv8n (nano variant) was intentionally selected to ensure feasibility on low-power embedded systems, aligning with real edge deployment constraints.
+A laptop was used for development and testing. However, the system is explicitly designed for edge deployment using YOLOv8n, a lightweight model optimized for low-compute environments.
 
-5. Vision Pipeline Capabilities
+🔹 Vision Pipeline Capabilities
 
-The system fulfills all required functional constraints:
+The system supports:
 
-Continuous live video stream ingestion
+Continuous video stream ingestion
 Frame-level real-time inference
 Multi-class object detection
-Bounding boxes with confidence visualization
-Real-time performance monitoring (FPS tracking)
-Structured output generation per frame
-6. Model Selection Rationale
-Model: YOLOv8 Nano (YOLOv8n)
+Bounding box visualization
+Confidence score display
+FPS monitoring
+Structured JSON logging
+🔹 Model Information
+YOLOv8 Nano (YOLOv8n)
 
-This model was selected due to the following trade-offs:
+A lightweight pre-trained object detection model.
 
-Factor	Decision
-Accuracy	Moderate (acceptable for real-time use)
-Speed	High (optimized for CPU inference)
-Deployment	Edge-friendly
-Complexity	Low overhead
-
-The model is pre-trained on the COCO dataset, enabling detection of 80 general object classes without additional training.
-
-7. Output Design Philosophy
-
-A key design decision was ensuring the system is not only visual but also machine-interpretable.
-
-🔹 Dual Output Strategy
-1. Human-readable output
+Key Characteristics:
+High inference speed
+Optimized for CPU execution
+Suitable for edge deployment
+Trained on COCO dataset (80 classes)
+🔹 Output System
+Visual Output
 Bounding boxes
 Class labels
 Confidence scores
 FPS overlay
-2. Machine-readable output
-JSON-based structured logs per frame
-Timestamped detection history
+Structured Output
 
-This enables debugging, analytics, and downstream system integration.
+JSON-based per-frame detection logs:
 
-8. Structured Output Example
 {
   "timestamp": 1710000000,
   "detections": [
@@ -89,49 +77,50 @@ This enables debugging, analytics, and downstream system integration.
     }
   ]
 }
-9. Key Features
-Real-time object detection on live webcam feed
+🔹 Key Features
+Real-time object detection using webcam
 CPU-optimized inference pipeline
 Multi-object class recognition
-FPS-based performance monitoring
+FPS performance tracking
 Structured JSON logging system
-Modular architecture for edge adaptability
-10. How to Run
+Modular edge-ready architecture
+🔹 How to Run
 pip install -r requirements.txt
 python src/main.py
 
-Press q to terminate execution.
+Press q to stop execution.
 
-11. Design Decisions & Trade-offs
+🔹 Design Decisions
+YOLOv8n selected for low-latency edge performance
+Modular separation of camera, detection, and logging logic
+Local inference used instead of cloud APIs
+Frame-based logging for reproducibility and debugging
+Lightweight architecture for embedded deployment
+🔹 Limitations
+Performance depends on lighting conditions
+CPU inference limits maximum FPS
+COCO dataset may not generalize to custom objects
+🔹 Future Improvements
+Raspberry Pi deployment with benchmarking
+INT8 quantization for faster edge inference
+Web-based real-time dashboard
+Custom dataset fine-tuning
+Real hardware camera integration optimization
+🔹 Demo
 
-Several intentional engineering trade-offs were made:
-
-YOLOv8n over larger models → prioritizing latency over marginal accuracy
-Local inference over cloud APIs → ensuring edge feasibility
-Frame-by-frame logging → enabling reproducibility and debugging
-Modular architecture → supporting future hardware migration
-
-These choices reflect a system designed for real-world embedded AI constraints rather than purely academic benchmarks.
-
-12. Limitations
-Performance depends on lighting conditions and camera quality
-CPU-bound execution limits maximum FPS
-Pre-trained COCO dataset may not generalize to domain-specific objects
-13. Future Improvements
-Raspberry Pi deployment with hardware benchmarking
-INT8 model quantization for edge acceleration
-Web-based real-time monitoring dashboard
-Custom dataset fine-tuning for domain-specific detection
-14. Demo
-
-A live demonstration is available in:
+Live demonstration available at:
 
 demo/demo.mp4
 
-If the video does not play on GitHub, download it and view locally.
+If video does not play on GitHub, download and view locally.
 
-15. Closing Statement
+🔹 Conclusion
 
-This project demonstrates a complete real-time edge perception pipeline integrating computer vision inference, system-level modular design, and structured output engineering.
+This project demonstrates a complete real-time edge AI perception system combining computer vision inference, modular software architecture, and structured output generation.
 
-The emphasis is not only on detection accuracy, but on deployability, architectural clarity, and real-time performance under constrained compute environments.
+The focus is on:
+
+Real-time performance
+Edge deployment feasibility
+Clean system design
+Scalable modular structure
