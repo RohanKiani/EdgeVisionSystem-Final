@@ -121,13 +121,13 @@ python src/main.py
 
 ## 🔹 Design Decisions
 
-Model Choice: YOLOv8n was chosen over larger variants to minimize operational latency on edge hardware.
+* Model Choice: YOLOv8n was chosen over larger variants to minimize operational latency on edge hardware.
 
-Separation of Concerns: Implemented a highly modular separation between camera capture, core detection, and logging routines.
+* Separation of Concerns: Implemented a highly modular separation between camera capture, core detection, and logging routines.
 
-Local Computing: Prioritized local inference over cloud APIs to ensure network independence and reduced data latency.
+* Local Computing: Prioritized local inference over cloud APIs to ensure network independence and reduced data latency.
 
-Granular Logs: Frame-based logging architecture simplifies debugging and verification pipelines.
+* Granular Logs: Frame-based logging architecture simplifies debugging and verification pipelines.
 
 ---
 
@@ -158,7 +158,9 @@ Granular Logs: Frame-based logging architecture simplifies debugging and verific
 ## 🔹 Demo
 
 You can view the system in action here:
+
 * demo/demo.mp4
+  
 If the video file does not preview or play directly within GitHub, please download it to view the recording locally.
 
 ---
