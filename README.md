@@ -133,25 +133,25 @@ Granular Logs: Frame-based logging architecture simplifies debugging and verific
 
 ## 🔹 Limitations
 
-Environmental Dependencies: System performance and confidence scores depend heavily on ambient lighting conditions.
+* Environmental Dependencies: System performance and confidence scores depend heavily on ambient lighting conditions.
 
-Hardware Thresholds: CPU execution imposes an upper limit on maximum achievable FPS.
+* Hardware Thresholds: CPU execution imposes an upper limit on maximum achievable FPS.
 
-Domain Adaptation: The baseline COCO dataset may not generalize accurately to niche or highly custom objects without retraining.
+* Domain Adaptation: The baseline COCO dataset may not generalize accurately to niche or highly custom objects without retraining.
 
 ---
 
 ## 🔹 Future Improvements
 
-[ ] Deploy directly to Raspberry Pi hardware and conduct extensive profiling benchmarks.
+* Deploy directly to Raspberry Pi hardware and conduct extensive profiling benchmarks.
 
-[ ] Implement INT8 Quantization to accelerate inference speeds on target CPUs.
+* Implement INT8 Quantization to accelerate inference speeds on target CPUs.
 
-[ ] Build a local web-based telemetry dashboard.
+* Build a local web-based telemetry dashboard.
 
-[ ] Fine-tune the model on domain-specific custom datasets.
+* Fine-tune the model on domain-specific custom datasets.
 
-[ ] Integrate multiple industrial-grade hardware camera inputs.
+* Integrate multiple industrial-grade hardware camera inputs.
 
 ---
 
