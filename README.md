@@ -1,6 +1,8 @@
 
 Real-Time Edge Vision System
+
 YOLOv8-Based Object Detection on Live Camera Feeds
+
 🔹 Overview
 
 This project implements a real-time computer vision system for object detection on live camera feeds using a lightweight YOLOv8 model optimized for CPU-based edge execution.
@@ -16,6 +18,7 @@ Perform real-time object detection and classification
 Display bounding boxes, labels, and confidence scores
 Generate structured detection logs in real time
 Maintain performance suitable for edge devices
+
 🔹 System Architecture
 
 The system follows a modular streaming pipeline:
@@ -27,7 +30,9 @@ Fully modular architecture
 Real-time frame-based processing
 CPU-optimized inference pipeline
 Edge-device deployment compatibility
+
 🔹 Hardware Assumption
+
 Deployment Targets:
 Raspberry Pi / Single Board Computers
 CPU-only inference systems
@@ -47,7 +52,9 @@ Bounding box visualization
 Confidence score display
 FPS monitoring
 Structured JSON logging
+
 🔹 Model Information
+
 YOLOv8 Nano (YOLOv8n)
 
 A lightweight pre-trained object detection model.
@@ -57,7 +64,9 @@ High inference speed
 Optimized for CPU execution
 Suitable for edge deployment
 Trained on COCO dataset (80 classes)
+
 🔹 Output System
+
 Visual Output
 Bounding boxes
 Class labels
@@ -77,35 +86,45 @@ JSON-based per-frame detection logs:
     }
   ]
 }
+
 🔹 Key Features
+
 Real-time object detection using webcam
 CPU-optimized inference pipeline
 Multi-object class recognition
 FPS performance tracking
 Structured JSON logging system
 Modular edge-ready architecture
+
 🔹 How to Run
+
 pip install -r requirements.txt
 python src/main.py
 
 Press q to stop execution.
 
 🔹 Design Decisions
+
 YOLOv8n selected for low-latency edge performance
 Modular separation of camera, detection, and logging logic
 Local inference used instead of cloud APIs
 Frame-based logging for reproducibility and debugging
 Lightweight architecture for embedded deployment
+
 🔹 Limitations
+
 Performance depends on lighting conditions
 CPU inference limits maximum FPS
 COCO dataset may not generalize to custom objects
+
 🔹 Future Improvements
+
 Raspberry Pi deployment with benchmarking
 INT8 quantization for faster edge inference
 Web-based real-time dashboard
 Custom dataset fine-tuning
 Real hardware camera integration optimization
+
 🔹 Demo
 
 Live demonstration available at:
