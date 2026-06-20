@@ -96,7 +96,7 @@ Detections are exported natively using the following structured JSON format:
     }
   ]
 }
-
+```
 ---
 
 ## 🔹 Key Features
