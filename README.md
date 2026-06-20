@@ -96,21 +96,21 @@ Detections are exported natively using the following structured JSON format:
     }
   ]
 }
-🔹 Key Features
-Webcam Integration: Real-time object detection directly from active local camera feeds.
+## 🔹 Key Features
 
-Hardware Efficiency: CPU-optimized inference pipeline avoiding cloud overhead.
+* **Webcam Integration:** Real-time object detection directly from active local camera feeds.
+* **Hardware Efficiency:** CPU-optimized inference pipeline avoiding cloud overhead.
+* **Multi-Object Capabilities:** Concurrent multi-object class recognition.
+* **Performance Telemetry:** Integrated live FPS tracking.
+* **Data Reproducibility:** Structured JSON logging for downstream analytics.
 
-Multi-Object Capabilities: Concurrent multi-object class recognition.
+---
 
-Performance Telemetry: Integrated live FPS tracking.
+## 🔹 How to Run
 
-Data Reproducibility: Structured JSON logging for downstream analytics.
-
-🔹 How to Run
 Clone the repository, install the dependencies, and launch the main execution script:
 
-Bash
+```bash
 pip install -r requirements.txt
 python src/main.py
 💡 Tip: Press q while focused on the video window to safely stop execution.
