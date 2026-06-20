@@ -13,8 +13,6 @@ The system simulates an edge deployment pipeline where inference, visualization,
 
 # 🔹 Core Objectives
 
-The system is designed to:
-
 - Ingest continuous live camera feed  
 - Perform real-time object detection and classification  
 - Display bounding boxes, labels, and confidence scores  
@@ -25,9 +23,11 @@ The system is designed to:
 
 # 🔹 System Architecture
 
-Camera Input → Frame Capture → YOLOv8 Inference → Post-Processing → Visualization → Logging
+Camera Input → Frame Capture → YOLOv8 Inference → Post-Processing → Visualization → Logging  
 
-### Key Properties
+---
+
+# 🔹 Key Properties
 
 - Modular architecture  
 - Real-time frame-based processing  
@@ -38,14 +38,12 @@ Camera Input → Frame Capture → YOLOv8 Inference → Post-Processing → Visu
 
 # 🔹 Hardware Assumption
 
-### Deployment Targets
-
+## Deployment Targets
 - Raspberry Pi / Single Board Computers  
 - CPU-only inference systems  
-- Laptop-based simulation (used for development)
+- Laptop-based simulation (used for development  
 
-### Justification
-
+## Justification
 A laptop was used for development and testing. The system is designed for edge deployment using YOLOv8n, a lightweight model optimized for low-compute environments.
 
 ---
@@ -64,11 +62,11 @@ A laptop was used for development and testing. The system is designed for edge d
 
 # 🔹 Model Information
 
-### YOLOv8 Nano (YOLOv8n)
+## YOLOv8 Nano (YOLOv8n)
 
 Lightweight pre-trained object detection model.
 
-### Characteristics
+## Characteristics
 
 - High inference speed  
 - CPU optimized  
@@ -79,14 +77,13 @@ Lightweight pre-trained object detection model.
 
 # 🔹 Output System
 
-### Visual Output
-
+## Visual Output
 - Bounding boxes  
 - Class labels  
 - Confidence scores  
 - FPS overlay  
 
-### Structured Output
+## Structured Output
 
 ```json
 {
