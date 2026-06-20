@@ -116,3 +116,42 @@ Clone the repository, install the dependencies, and launch the main execution sc
 ```bash
 pip install -r requirements.txt
 python src/main.py
+```
+---
+
+🔹 Design Decisions
+Model Choice: YOLOv8n was chosen over larger variants to minimize operational latency on edge hardware.
+
+Separation of Concerns: Implemented a highly modular separation between camera capture, core detection, and logging routines.
+
+Local Computing: Prioritized local inference over cloud APIs to ensure network independence and reduced data latency.
+
+Granular Logs: Frame-based logging architecture simplifies debugging and verification pipelines.
+
+🔹 Limitations
+Environmental Dependencies: System performance and confidence scores depend heavily on ambient lighting conditions.
+
+Hardware Thresholds: CPU execution imposes an upper limit on maximum achievable FPS.
+
+Domain Adaptation: The baseline COCO dataset may not generalize accurately to niche or highly custom objects without retraining.
+
+🔹 Future Improvements
+[ ] Deploy directly to Raspberry Pi hardware and conduct extensive profiling benchmarks.
+
+[ ] Implement INT8 Quantization to accelerate inference speeds on target CPUs.
+
+[ ] Build a local web-based telemetry dashboard.
+
+[ ] Fine-tune the model on domain-specific custom datasets.
+
+[ ] Integrate multiple industrial-grade hardware camera inputs.
+
+🔹 Demo
+You can view the system in action here:
+
+Plaintext
+demo/demo.mp4
+If the video file does not preview or play directly within GitHub, please download it to view the recording locally.
+
+🔹 Conclusion
+This system demonstrates a complete, end-to-end real-time edge AI pipeline. By combining robust computer vision inference, a clean modular software layout, and structured output logging, it creates a reliable blueprint for production-ready edge deployment.
