@@ -161,7 +161,7 @@ You can view the system in action here:
 
 * demo/demo.mp4
   
-If the video file does not preview or play directly within GitHub, please download it to view the recording locally.
+* If the video file does not preview or play directly within GitHub, please download it to view the recording locally.
 
 ---
 
