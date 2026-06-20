@@ -96,6 +96,9 @@ Detections are exported natively using the following structured JSON format:
     }
   ]
 }
+
+---
+
 ## 🔹 Key Features
 
 * **Webcam Integration:** Real-time object detection directly from active local camera feeds.
